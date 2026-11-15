@@ -55,4 +55,6 @@ $env:FASTAPI_URL = "http://127.0.0.1:8000"
 python -m streamlit run streamlit_app.py
 ```
 
+For deployment, set `FASTAPI_URL` on the **Streamlit service** to the public FastAPI URL. The Streamlit frontend and FastAPI backend are separate services; the Render backend URL serves the API (`/health` and `/docs`), not the Streamlit page. The frontend defaults to `https://number-detection-system.onrender.com`.
+
 If you retrain the notebook model instead, save it as `cnn_mnist.keras` in this folder with `cnn.save("cnn_mnist.keras")`.

@@ -16,6 +16,17 @@ app = FastAPI(title="Digit Studio", version="1.0.0")
 model = None
 
 
+@app.get("/")
+def root():
+    return {
+        "service": "Digit Studio prediction API",
+        "status": "ok",
+        "health": "/health",
+        "docs": "/docs",
+        "predict": "POST /predict",
+    }
+
+
 def load_model():
     global model
     if model is None and MODEL_PATH.exists():

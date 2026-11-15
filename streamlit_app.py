@@ -8,7 +8,10 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
 
-API_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000").rstrip("/")
+API_URL = os.getenv(
+    "FASTAPI_URL",
+    "https://number-detection-system.onrender.com",
+).rstrip("/")
 REQUEST_TIMEOUT = 60
 
 st.set_page_config(
@@ -98,7 +101,7 @@ if model_ready:
     st.success("CNN model connected", icon="✅")
 else:
     st.warning(
-        f"FastAPI is unavailable or its model is not loaded. Start the backend at {API_URL}.",
+        f"Could not connect to the CNN API at {API_URL}. Check that the backend is running and its model is loaded.",
         icon="⚠️",
     )
 
