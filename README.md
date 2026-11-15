@@ -2,6 +2,10 @@
 
 A Streamlit interface for drawing or uploading a handwritten digit and predicting it with the MNIST CNN. Streamlit is the user-facing frontend; FastAPI provides the prediction API.
 
+## Git LFS
+
+The MNIST CSV files and saved CNN model are stored with Git LFS because they are binary or larger files. Install Git LFS before cloning, then run `git lfs install`. After cloning, use `git lfs pull` if the data or model files are not downloaded automatically.
+
 ## 1. Install dependencies
 
 Open a terminal in this folder and run:
